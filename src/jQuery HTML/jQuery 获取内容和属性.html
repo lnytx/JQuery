@@ -1,0 +1,43 @@
+<html>
+<head>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(function(){
+	$("#btn1").click(function(){
+		alert("Text:" + $("#test").text());
+	});
+	
+	$("#btn2").click(function(){
+		alert("html:" + $("#test").html());
+	});
+	
+	$("#show").click(function(){
+		alert("Value:" + $("#test2").val());
+	});
+	
+	/*属性*/
+	$(function(){
+		$("#attr").click(function(){
+			alert("href:" + $("#w3s").attr("href"));
+		});
+	})
+})
+
+
+</script>
+</head>
+<body>
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+<button id="btn1">Show Text</button>
+<button id="btn2">Show HTML</button>
+
+<p>Name: <input type="text" id="test2" value="Mickey Mouse"></p>
+<button id="show">Show Value</button>
+
+
+<p><a href="/" id="w3s">ziqiangxuetang.com</a></p>
+<button id="attr">Show href Value</button>
+
+</body>
+</html>

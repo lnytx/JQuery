@@ -1,0 +1,71 @@
+<html>
+<head>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(function(){
+	$("#btn1").click(function(){
+		$("#test1").text("Hello world");
+	});
+	
+	$("#btn2").click(function(){
+		$("#test2").html("<b>Hello</b> World");
+	});
+	
+	$("#btn3").click(function(){
+		$("#test3").val("Hello World");
+	});
+	
+	$("#btn4").click(function(){
+		$("#test4").text(function(i,oriText){
+			return ("oldText:" + oriText +"newText:"+"Hello World " + "index:"+i)
+		})
+	})
+	$("#btn5").click(function(){
+		$("#test5").html(function(i,oriText){
+			return ("oldText:" + oriText +"newText:"+"Hello World " + "index:"+i)
+		});
+	})
+	
+	
+	/*attr方法*/
+	$("#change").click(function(){
+		$("w3s").attr({
+			"href": "www.baidu.com",
+			"title": "www.baidu.com"
+		});
+	});
+	
+	/*回调函数*/
+	 $("change").click(function(){
+    	$("#w3s").attr("href", function(i,origValue){
+      		return origValue + "/jquery"; 
+    });
+  }); 
+	
+})
+
+
+</script>
+</head>
+<body>
+<p id="test1">This is a paragraph.</p>
+<p id="test2">This is another paragraph.</p>
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+<button id="btn1">Set Text</button>
+<button id="btn2">Set HTML</button>
+<button id="btn3">Set Value</button>
+
+
+<p id="test4">This is a <b>bold</b> paragraph.</p>
+<p id="test5">This is another <b>bold</b> paragraph.</p>
+<button id="btn4">Show Old/New Text</button>
+<button id="btn5">Show Old/New HTML</button>
+
+<p><a href="/" id="w3s">ziqiangxuetang.com</a></p>
+<button id="change">Change href and title</button>
+<p>Mouse over the link to see that the href attribute has changed and a title attribute is set.</p>
+
+
+</body>
+</html>

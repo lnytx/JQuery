@@ -1,0 +1,55 @@
+<html>
+<head>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+
+$(function(){
+	$("#btn1").click(function(){
+		$("p").prepend("<b>Hello World</b>");
+	});
+	$("#btn2").click(function(){
+		$("ol").prepend("<li>List item</li>");
+	});
+})
+
+/*定义一个函数添加元素*/
+function appendText()
+{
+	var txt1="<p>Text.</p>";              // Create text with HTML
+	var txt2=$("<p></p>").text("Text.");  // Create text with jQuery
+	var txt3=document.createElement("p");
+	txt3.innerHTML="Text.";               // Create text with DOM
+	$("body").append(txt1,txt2,txt3);        // Append new elements
+}
+
+
+/*被选元素前后添加*/
+function afterText()
+{
+	var txt1="<b>I </b>";                    // Create element with HTML
+	var txt2=$("<i></i>").text("love ");     // Create with jQuery
+	var txt3=document.createElement("big");  // Create with DOM
+	txt3.innerHTML="jQuery!";
+	$("img").after(txt1,txt2,txt3);          // Insert new elements after img
+}
+</script>
+</head>
+<body>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<ol>
+<li>List item 1</li>
+<li>List item 2</li>
+<li>List item 3</li>
+</ol>
+<button id="btn1">Append text</button>
+<button id="btn2">Append list items</button>
+<button onclick="appendText()">Append text</button>
+
+
+<img src="/static/images/logo.png">
+<br><br>
+<button onclick="afterText()">Insert after</button>
+</body>
+</html>

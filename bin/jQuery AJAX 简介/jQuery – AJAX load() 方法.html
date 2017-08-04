@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("./OMS数据库sql.txt #p1");
+  });
+  
+  
+  /*支持回调方法*/
+  $("#btn2").click(function(){
+  	$("#div1").load("./OMS数据库sql.txt #p1",function(responseTxt,statusTxt,xhr){
+  		if (statusTxt=="success")
+  			alert("外部方法执行成功")
+  		if(statusTxt=="error")
+  			alert("Error: "+xhr.status+": "+xhr.statusText);
+  	})
+  })
+  
+});
+</script>
+</head>
+<body>
+<div id="div1"><h2>使用 jQuery AJAX 修改文本内容</h2></div>
+<button>获取外部内容</button>
+<button id="btn2">获取外部内容</button>
+</body>
+</html>

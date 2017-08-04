@@ -1,0 +1,54 @@
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("p").click(function(){
+		$(this).hide();
+	});
+});
+
+/*
+$(function(){
+	$("#button").click(function(){
+		$("p").hide();
+	});
+});
+*/
+
+/*这是演示的是id选择器*/
+$(function(){
+	$("button").click(function(){
+		$("#test").hide();
+	});
+});
+/*属性先把器*/
+$(function(){
+	$("button").click(function(){
+		$("a[target='_blank']").hide();
+	});
+});
+
+/*类选择哭*/
+$(function(){
+	$("button").click(function(){
+		$("p.intro").hide();
+	});
+})
+</script>
+</head>
+<body>
+<p>如果你点我，我就会消失。</p>
+<p>继续点我!</p>
+<p>接着点我!</p>
+<button id='button'>按钮</button>
+<p2 id="test">这是另外一个段落</p2>
+<p><a href="/html/" target="_blank">HTML Tutorial</a></p>
+<p><a href="/css/">CSS Tutorial</a></p>
+
+<h2 class="intro">This is a heading</h2>
+<p class="intro">This is a paragraph.</p>
+</body>
+</html>
